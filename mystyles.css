@@ -1,0 +1,40 @@
+            body {
+                font-family:serif;
+            }
+        
+            .container {
+                margin: 20px;
+                background-color: deepskyblue;
+                padding=20px;
+                
+            }
+            .container2 {
+                margin: 30px;
+                background-color: aquamarine;
+                padding: 40px;
+                
+            }
+        
+            .topnav {
+                background-color: skyblue;
+                overflow: hidden;
+                }
+            
+            .topnav a {
+                float: left;
+                color: slateblue;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                }
+            
+            .topnav a:hover {
+                background-color: #ddd;
+                color: dodgerblue;
+                }
+            
+            .topnav a.active {
+                background-color: #4CAF50;
+                color: aliceblue;
+                }
