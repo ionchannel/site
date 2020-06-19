@@ -20,9 +20,52 @@
         <a href="http:/www.cnn.com" target="_blank">CNN News</a><br>
         
         <a href="https://www.amazon.com/s?k=giraffe&ref=nb_sb_noss_2" target="_self">Shop Giraffes</a><br>
-        <img src="giraffe.jpg" style="width: 200px; padding: 100px">
+        <img src="giraffe.jpg" style="width: 300px; padding: 100px">
         </div>
+        
+        
+        <script>function myFunction(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+            }
+        </script>
+        
+        
+        <!-- The grid: four columns -->
+    <div class="row">
+            <div class="column">
+            <img src="giraffe6.jpg" alt="Giraffes" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="giraffe7.jpg" alt="More Giraffes" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="giraffe8.jpg" alt="Even More Giraffes" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="giraffe9.jpg" alt="Some More Giraffes" onclick="myFunction(this);">
+        </div>
+    </div>
 
+        <!-- The expanding image container -->
+    <div class="container">
+        <!-- Close the image -->
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+            <!-- Expanded image -->
+        <img id="expandedImg" style="width:100%">
+
+        <!-- Image text -->
+            <div id="imgtext"></div>
+    </div>
  
     </body>
     
