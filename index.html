@@ -13,6 +13,9 @@
             <a href="contact.html">Contact</a>
             <a href="about.html">About</a>
             <a href="gallery.html">Gallery</a>
+            <button class="inputbox" onclick="myfunction()">Submit</button>
+            <input class="inputbox" id="myinput">
+            
         </div>
         <div class="container">
         <h1>Home Page</h1>
@@ -23,8 +26,18 @@
         <img src="giraffe.jpg" style="width: 300px; padding: 100px">
         </div>
         
+        <script>
         
- 
+            function myfunction() {
+                myinput = document.getElementById("myinput");
+                alert(myinput.value);
+                myinput.value = "";
+                
+            }
+        
+        
+        </script>
+    
     </body>
     
 </html>
