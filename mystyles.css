@@ -2,7 +2,6 @@
                 font-family:sans-serif;
                 background-color:peachpuff;
                 margin:0px;
-                       
             }
         
             .container {
@@ -17,6 +16,16 @@
                 padding: 40px;
                 
             }
+
+            .mycontent {
+                margin: 20px;            
+            }
+
+            .inputbox {
+                margin: 10px;
+                float: right;
+            }
+    
             
             /* The grid: Four equal columns that floats next to each other */
             .column {
