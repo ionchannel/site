@@ -7,13 +7,14 @@
     </head>
 
     <link rel="stylesheet" href="mystyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <body>
         <div class="topnav">
             <a class="active" href="index.html">Home</a>
             <a href="contact.html">Contact</a>
             <a href="about.html">About</a>
             <a href="gallery.html">Gallery</a>
-            <button class="inputbox" onclick="myfunction()">Submit</button>
+            <button class="inputbox" onclick="myfunction()"><i class="fa fa-search"></i></button>
             <input class="inputbox" id="myinput">
             
         </div>
@@ -26,18 +27,25 @@
         <img src="giraffe.jpg" style="width: 300px; padding: 100px">
         </div>
         
-        <script>
+    <script>
         
-            function myfunction() {
-                myinput = document.getElementById("myinput");
-                alert(myinput.value);
-                myinput.value = "";
-                
+        function myfunction() {
+            
+            data = [{pokemon:"bulbasaur",type:"grass"},{pokemon: "pikachu",type:"electric"},{pokemon:"charmander",type:"fire"}];
+            
+            myinput = document.getElementById("myinput");
+            
+            for (i=0;i<3;i++) {
+                if (data[i]['pokemon'] == myinput.value.toLowerCase()) {
+                    alert(data[i]['type']);
+                    break;
+                }
             }
-        
-        
-        </script>
-    
+            
+            myinput.value = "";
+        }
+
+    </script>
     </body>
     
 </html>
