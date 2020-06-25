@@ -3,11 +3,12 @@
 
     <head>
         <title>Website</title>
-    
+        <link rel="stylesheet" href="mystyles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="pokedex.json"></script>
     </head>
 
-    <link rel="stylesheet" href="mystyles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <body>
         <div class="topnav">
             <a class="active" href="index.html">Home</a>
@@ -21,6 +22,9 @@
         <div class="container">
         <h1>Home Page</h1>
         <p>Page of Giraffes</p>
+            
+            <div id=info ></div>
+            
         <a href="http:/www.cnn.com" target="_blank">CNN News</a><br>
         
         <a href="https://www.amazon.com/s?k=giraffe&ref=nb_sb_noss_2" target="_self">Shop Giraffes</a><br>
@@ -31,18 +35,21 @@
         
         function myfunction() {
             
-            data = [{pokemon:"bulbasaur",type:"grass"},{pokemon: "pikachu",type:"electric"},{pokemon:"charmander",type:"fire"}];
+            // data = [{pokemon:"bulbasaur",type:"grass"},{pokemon: "pikachu",type:"electric"},{pokemon:"charmander",type:"fire"}];
             
             myinput = document.getElementById("myinput");
             
-            for (i=0;i<3;i++) {
-                if (data[i]['pokemon'] == myinput.value.toLowerCase()) {
-                    alert(data[i]['type']);
+            for (i=0;i<data.length;i++) {
+                if (data[i]['name']['english'].toLowerCase() == myinput.value.toLowerCase()) {
+                    // alert(data[i]['type'][0]);
                     break;
                 }
             }
             
             myinput.value = "";
+            mydiv = document.getElementById("info")
+            
+                mydiv.innerHTML = "<h1>" + data[i]['type'][0] + "<h1>"
         }
 
     </script>
