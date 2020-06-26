@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Website</title>
+        <title>Pokemon Search</title>
         <link rel="stylesheet" href="mystyles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="pokedex.json"></script>
@@ -15,23 +15,60 @@
             <a href="contact.html">Contact</a>
             <a href="about.html">About</a>
             <a href="gallery.html">Gallery</a>
-            <button class="inputbox" onclick="myfunction()"><i class="fa fa-search"></i></button>
-            <input class="inputbox" id="myinput">
+            <!--<button class="inputbox" onclick="myfunction()"><i class="fa fa-search"></i></button>-->
+            <input class="inputbox" id="myinput"  placeholder="Search a Pokemon...">
+            
+
             
         </div>
         <div class="container">
+
+        <p> Pokemon Type: </p>
+            <div id=info ></div>
+        
+        <hr style="height:5px">
         <h1>Home Page</h1>
         <p>Page of Giraffes</p>
-            
-            <div id=info ></div>
-            
+            <!-- Use a button to open the snackbar -->
+            <button onclick="snackbar()">Info</button>
+
+            <!-- The actual snackbar -->
+            <div id="snackbar">Website created by Sebastian Liu in two weeks.</div>
+            <br>
         <a href="http:/www.cnn.com" target="_blank">CNN News</a><br>
-        
         <a href="https://www.amazon.com/s?k=giraffe&ref=nb_sb_noss_2" target="_self">Shop Giraffes</a><br>
         <img src="giraffe.jpg" style="width: 300px; padding: 100px">
+        
         </div>
         
     <script>
+        
+        function snackbar() {
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+
+        // Add the "show" class to DIV
+        x.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+        var pokemon = [""]
+        // Get the input field
+        var input = document.getElementById("myinput");
+
+        // Execute a function when the user releases a key on the keyboard
+        input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        // document.getElementById("myBtn").click();
+        myfunction();
+            
+        }
+        });
         
         function myfunction() {
             
@@ -43,6 +80,7 @@
                 if (data[i]['name']['english'].toLowerCase() == myinput.value.toLowerCase()) {
                     // alert(data[i]['type'][0]);
                     break;
+        
                 }
             }
             
